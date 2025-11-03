@@ -1,0 +1,272 @@
+/* =======================================================
+   UNIVERSAL ACADEMIC TEMPLATE STYLES
+   Author: [Your Name]
+   Year: 2025
+   ======================================================= */
+
+/* ====== VARIABLES ====== */
+:root {
+  --primary: #004080;
+  --accent: #0078d7;
+  --bg: #fafafa;
+  --text: #222;
+  --muted: #666;
+  --max-width: 900px;
+}
+
+/* ====== RESET & BASE ====== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+ol li {
+  margin-bottom: 0.8rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Accessibility: visible focus outline */
+a:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Subtle section dividers */
+main section + section {
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: white;
+  border-bottom: 3px solid var(--primary);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  margin: 0.2rem 0;
+}
+
+header p {
+  color: var(--muted);
+  margin: 0.2rem 0 0.8rem 0;
+}
+
+/* Keep name + dept text aligned left next to photo on larger screens */
+@media (min-width: 700px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 1.5rem;
+  }
+
+  header img {
+    margin-bottom: 0;
+  }
+
+  /* Wrap text and nav in a container beside the image */
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 0.8rem;
+  }
+}
+
+/* Responsive horizontal layout for wide screens */
+@media (min-width: 700px) {
+  header {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    gap: 1.5rem;
+  }
+
+  header img {
+    margin-bottom: 0;
+  }
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: var(--primary);
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+nav a.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: #e9edf2; /* Slightly darker, academic-neutral gray-blue */
+  color: #333;
+  border-top: 3px solid var(--primary);
+  font-size: 0.95em;
+}
+
+footer a {
+  color: var(--primary);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem 1.2rem 1.5rem;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.footer-section p {
+  margin: 0.3rem 0;
+  color: #444; /* Slightly muted for better readability */
+}
+
+/* Subtle top accent line */
+footer::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer::before {
+    margin-bottom: 0.8rem;
+  }
+}
+
+
+/* ====== SCROLL TO TOP BUTTON ====== */
+#scrollTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: none;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+#scrollTop:hover {
+  background: var(--primary);
+}
+
+.dark-mode #scrollTop {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ====== THEMES ====== */
+.light-mode {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+.dark-mode {
+  --bg: #1a1a1a;
+  --text: #e0e0e0;
+  --primary: #88b0ff;
+  --accent: #5c8aff;
+}
+
+/* ====== BLOCKQUOTES ====== */
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 1rem 0;
+}
